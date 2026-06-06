@@ -2,11 +2,38 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   HiOutlineShieldCheck,
   HiOutlineClock,
   HiOutlineArrowTrendingUp,
 } from "react-icons/hi2";
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 80,
+    scale: 0.95,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
 
 export default function WhyChooseSection() {
   const features = [
@@ -31,85 +58,117 @@ export default function WhyChooseSection() {
   ];
 
   return (
-    <section className="bg-[#041528] py-24 text-white">
+    <section className="bg-black py-24 text-white overflow-hidden -mt-20">
       <div className="max-w-7xl mx-auto px-6">
         {/* Top Section */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <motion.div
+          className="grid lg:grid-cols-2 gap-16 items-center"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {/* Left Image */}
-          <div className="relative">
-            <div className="relative overflow-hidden rounded-3xl">
+          <motion.div variants={fadeUp} className="relative">
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 group">
               <Image
                 src="/team.jpg"
                 alt="Engineering Team"
                 width={800}
                 height={500}
-                className="w-full h-[400px] object-cover"
+                className="w-full h-[450px] object-cover transition duration-700 group-hover:scale-105"
               />
+
+              <div className="absolute inset-0 bg-black/20" />
             </div>
 
             {/* Floating Badge */}
-            <div className="absolute -top-5 right-8 rounded-2xl bg-cyan-400 px-8 py-4 text-black font-semibold shadow-[0_0_30px_rgba(34,211,238,.35)]">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.7 }}
+              className="absolute -top-5 right-8 rounded-2xl border border-white/10 bg-white px-8 py-4 text-black font-semibold shadow-xl"
+            >
               99.8% Accuracy
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Content */}
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-12">
+          <motion.div variants={fadeUp}>
+            <span className="inline-block rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[3px] text-gray-400">
+              Why Choose Us
+            </span>
+
+            <h2 className="mt-6 mb-12 text-4xl md:text-5xl font-bold">
               Why Choose PRIME Drafting?
             </h2>
 
-            <div className="space-y-10">
+            <motion.div
+              className="space-y-10"
+              variants={staggerContainer}
+            >
               {features.map((item, index) => (
-                <div key={index} className="flex gap-5">
-                  <div className="h-12 w-12 rounded-full bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 shrink-0">
+                <motion.div
+                  key={index}
+                  variants={fadeUp}
+                  className="flex gap-5"
+                >
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/10 backdrop-blur-md text-white">
                     {item.icon}
                   </div>
 
                   <div>
-                    <h3 className="text-2xl font-semibold mb-2">
+                    <h3 className="mb-2 text-2xl font-semibold">
                       {item.title}
                     </h3>
 
-                    <p className="text-slate-400 leading-relaxed">
+                    <p className="leading-relaxed text-gray-400">
                       {item.description}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
 
         {/* CTA Box */}
-        <div className="mt-28">
-          <div className="rounded-[40px] bg-gradient-to-br from-[#0b1b38] to-[#08142b] border border-white/5 px-8 md:px-16 py-20 text-center">
-            <h2 className="text-5xl font-bold mb-6">
+        <motion.div
+          className="mt-28"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <div className="rounded-[40px] border border-white/10 bg-zinc-950 px-8 py-20 text-center md:px-16">
+            <h2 className="mb-6 text-4xl md:text-5xl font-bold">
               Ready to Draft Your Future?
             </h2>
 
-            <p className="max-w-3xl mx-auto text-slate-400 text-lg">
-              Partner with PRIME Drafting for precision engineering services
-              that elevate your project from concept to reality.
+            <p className="mx-auto max-w-3xl text-lg leading-relaxed text-gray-400">
+              Partner with PRIME Drafting for precision engineering
+              services that elevate your project from concept to
+              reality.
             </p>
 
-            <div className="mt-12 flex flex-col sm:flex-row justify-center gap-5">
+            <div className="mt-12 flex flex-col justify-center gap-5 sm:flex-row">
               <Link
                 href="/contact"
-                className="px-10 py-4 rounded-2xl bg-cyan-400 text-black font-semibold shadow-[0_0_30px_rgba(34,211,238,.35)] hover:scale-105 transition"
+                className="rounded-2xl bg-white px-10 py-4 font-semibold text-black transition-all duration-300 hover:scale-105"
               >
                 Request a Consultation
               </Link>
 
               <Link
                 href="/process"
-                className="px-10 py-4 rounded-2xl border border-white/20 hover:border-cyan-400 transition"
+                className="rounded-2xl border border-white/10 bg-white/5 px-10 py-4 backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black"
               >
                 Our Process
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   HiOutlineHome,
   HiOutlineCog6Tooth,
@@ -10,129 +10,205 @@ import {
   HiOutlineSquares2X2,
 } from "react-icons/hi2";
 
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 80,
+    scale: 0.95,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
 export default function CoreServices() {
   return (
-    <section className="bg-[#051326] py-24 text-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-black py-24 text-white">
+      <div className="mx-auto max-w-7xl px-6">
         {/* Heading */}
-        <div className="mb-10">
-          <h2 className="text-4xl font-bold">Core Services</h2>
-          <p className="mt-2 text-slate-400">
-            Specialized engineering solutions tailored for complexity.
+        <motion.div
+          className="mb-12"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <span className="inline-block rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[3px] text-gray-400">
+            Our Expertise
+          </span>
+
+          <h2 className="mt-5 text-4xl font-bold md:text-5xl">
+            Core Services
+          </h2>
+
+          <p className="mt-3 max-w-2xl text-gray-400">
+            Specialized engineering and drafting solutions tailored for
+            modern construction and infrastructure projects.
           </p>
+        </motion.div>
+
+        {/* Top Row */}
+        <div className="mb-5 grid gap-5 lg:grid-cols-3">
+          {/* Structural Engineering */}
+          <motion.div
+            className="group relative overflow-hidden rounded-3xl lg:col-span-2 h-[500px]"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <Image
+              src="/structure.jpg"
+              alt="Structural Engineering"
+              fill
+              className="object-cover grayscale transition duration-700 group-hover:scale-105"
+            />
+
+            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
+
+            <div className="absolute bottom-10 left-10 max-w-xl">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white backdrop-blur-md">
+                <HiOutlineHome size={22} />
+              </div>
+
+              <h3 className="mb-4 text-4xl font-bold md:text-5xl">
+                Structural Engineering
+              </h3>
+
+              <p className="leading-relaxed text-gray-300">
+                From concrete foundations to steel frameworks, our
+                structural drafting services ensure accuracy, safety,
+                and efficiency throughout every stage of construction.
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <span className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm backdrop-blur-md">
+                  Steel Detailing
+                </span>
+
+                <span className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm backdrop-blur-md">
+                  Concrete Design
+                </span>
+
+                <span className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm backdrop-blur-md">
+                  Load Analysis
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* MEP Design */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="rounded-3xl border border-white/10 bg-zinc-950 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-zinc-900"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white">
+              <HiOutlineCog6Tooth size={22} />
+            </div>
+
+            <h3 className="mt-6 text-2xl font-bold">
+              MEP Design
+            </h3>
+
+            <p className="mt-4 leading-relaxed text-gray-400">
+              Integrating mechanical, electrical, and plumbing systems
+              into coordinated BIM environments for maximum efficiency.
+            </p>
+
+            <div className="relative mt-8 h-56 overflow-hidden rounded-2xl">
+              <Image
+                src="/mep.jpg"
+                alt="MEP Design"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </motion.div>
         </div>
 
-       {/* Top Row */}
-<div className="grid gap-4 lg:grid-cols-3 mb-4">
-  {/* Structural Card */}
-  <div className="relative overflow-hidden rounded-3xl lg:col-span-2 h-[500px]">
-    <Image
-      src="/structure.jpg"
-      alt="Structural Engineering"
-      fill
-      className="object-cover"
-    />
+        {/* Bottom Row */}
+        <motion.div
+          className="grid gap-5 md:grid-cols-2 lg:grid-cols-3"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.15,
+              },
+            },
+          }}
+        >
+          {/* BIM Modeling */}
+          <motion.div
+            variants={fadeUp}
+            className="rounded-3xl border border-white/10 bg-zinc-950 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-zinc-900"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white">
+              <HiOutlineCube size={22} />
+            </div>
 
-    <div className="absolute inset-0 bg-gradient-to-t from-[#071425] via-[#071425]/70 to-[#071425]/30" />
+            <h3 className="mt-6 text-2xl font-bold">
+              BIM Modeling
+            </h3>
 
-    <div className="absolute bottom-10 left-10 max-w-xl">
-      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-cyan-400/20 text-cyan-300">
-        <HiOutlineHome size={22} />
-      </div>
+            <p className="mt-4 leading-relaxed text-gray-400">
+              High-fidelity Building Information Modeling that improves
+              collaboration, planning, and project coordination.
+            </p>
+          </motion.div>
 
-      <h3 className="text-5xl font-bold mb-4">
-        Structural Engineering
-      </h3>
+          {/* Site Coordination */}
+          <motion.div
+            variants={fadeUp}
+            className="rounded-3xl border border-white/10 bg-zinc-950 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-zinc-900"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white">
+              <HiOutlineBuildingOffice2 size={22} />
+            </div>
 
-      <p className="text-slate-300 leading-relaxed">
-        From concrete foundations to high-rise steel framing, our
-        structural drafting services ensure every load-bearing element
-        is meticulously documented for safety and efficiency.
-      </p>
+            <h3 className="mt-6 text-2xl font-bold">
+              Site Coordination
+            </h3>
 
-      <div className="mt-6 flex flex-wrap gap-3">
-        <span className="rounded-full bg-cyan-500/15 px-4 py-2 text-sm text-cyan-300">
-          Steel Detailing
-        </span>
-        <span className="rounded-full bg-cyan-500/15 px-4 py-2 text-sm text-cyan-300">
-          Concrete Design
-        </span>
-        <span className="rounded-full bg-cyan-500/15 px-4 py-2 text-sm text-cyan-300">
-          Load Analysis
-        </span>
-      </div>
-    </div>
-  </div>
+            <p className="mt-4 leading-relaxed text-gray-400">
+              Ensuring design intent is maintained from planning and
+              drafting through on-site execution and delivery.
+            </p>
+          </motion.div>
 
-  {/* MEP Card */}
-  <div className="rounded-3xl bg-[#0A1A31] border border-white/5 p-8 h-[500px]">
-    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-400/15 text-cyan-300">
-      <HiOutlineCog6Tooth size={22} />
-    </div>
+          {/* 3D Visualization */}
+          <motion.div
+            variants={fadeUp}
+            className="rounded-3xl border border-white/10 bg-zinc-950 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-zinc-900"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white">
+              <HiOutlineSquares2X2 size={22} />
+            </div>
 
-    <h3 className="mt-6 text-2xl font-bold">MEP Design</h3>
+            <h3 className="mt-6 text-2xl font-bold">
+              3D Visualization
+            </h3>
 
-    <p className="mt-4 text-slate-400 leading-relaxed">
-      Integrating mechanical, electrical, and plumbing systems into a
-      cohesive, clash-free digital model.
-    </p>
-
-    <div className="relative mt-8 h-52 overflow-hidden rounded-2xl">
-      <Image
-        src="/mep.jpg"
-        alt="MEP Design"
-        fill
-        className="object-cover"
-      />
-    </div>
-
-   
-  </div>
-</div>
-
-{/* Bottom Row */}
-<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-  {/* BIM */}
-  <div className="rounded-3xl bg-[#0A1A31] border border-white/5 p-8">
-    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-400/15 text-cyan-300">
-      <HiOutlineCube size={22} />
-    </div>
-
-    <h3 className="mt-6 text-2xl font-bold">BIM Modeling</h3>
-
-    <p className="mt-4 text-slate-400">
-      High-fidelity Building Information Modeling for seamless collaboration.
-    </p>
-  </div>
-
-  {/* Site Coordination */}
-  <div className="rounded-3xl bg-[#0A1A31] border border-white/5 p-8">
-    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-400/15 text-cyan-300">
-      <HiOutlineBuildingOffice2 size={22} />
-    </div>
-
-    <h3 className="mt-6 text-2xl font-bold">Site Coordination</h3>
-
-    <p className="mt-4 text-slate-400">
-      Ensuring design intent is maintained from the drafting board to the
-      construction site.
-    </p>
-  </div>
-
-  {/* 3D Visualization */}
-  <div className="rounded-3xl bg-[#0A1A31] border border-white/5 p-8">
-    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-400/15 text-cyan-300">
-      <HiOutlineSquares2X2 size={22} />
-    </div>
-
-    <h3 className="mt-6 text-2xl font-bold">3D Visualization</h3>
-
-    <p className="mt-4 text-slate-400">
-      Detailed renders that provide a realistic preview of structural
-      complexities.
-    </p>
-  </div>
-</div>
+            <p className="mt-4 leading-relaxed text-gray-400">
+              Photorealistic renders and visual presentations that help
+              clients understand structural and spatial concepts.
+            </p>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
