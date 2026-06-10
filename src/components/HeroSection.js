@@ -72,10 +72,10 @@ export default function HeroSection() {
           {/* Right Side Image */}
           <div className="relative flex justify-center mt-8 lg:mt-0">
             {/* Glow */}
-            <div className="absolute h-[350px] w-[350px] sm:h-[450px] sm:w-[450px] lg:h-[600px] lg:w-[500px] rounded-full bg-white/15 blur-[120px]" />
+            <div className="absolute h-[350px] w-[350px] sm:h-[450px] sm:w-[450px] lg:h-[600px] lg:w-[500px] rounded-full bg-white/5 blur-[120px]" />
 
             {/* Image Card */}
-            <div className="relative overflow-hidden rounded-[28px] sm:rounded-[32px] border border-white/10 bg-white/10 backdrop-blur-xl w-full max-w-md">
+            <div className="relative overflow-hidden rounded-[28px] sm:rounded-[32px] border border-white/10 bg-white/0 backdrop-blur-xl w-full max-w-md">
               <Image
                 src="/hero-image.jpg"
                 alt="Engineering Drafting"

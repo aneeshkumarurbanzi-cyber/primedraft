@@ -58,7 +58,7 @@ export default function WhyChooseSection() {
   ];
 
   return (
-    <section className="bg-black py-24 text-white overflow-hidden -mt-20">
+    <section className="py-24 text-white bg-[radial-gradient(ellipse_at_top,_#2a2a2a_0%,_#111111_40%,_#000000_100%)]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Top Section */}
         <motion.div

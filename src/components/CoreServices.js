@@ -29,7 +29,7 @@ const fadeUp = {
 
 export default function CoreServices() {
   return (
-    <section className="bg-black py-24 text-white">
+   <section className="py-24 text-white bg-[radial-gradient(ellipse_at_top,_#2a2a2a_0%,_#111111_50%,_#000000_80%)]">   
       <div className="mx-auto max-w-7xl px-6">
         {/* Heading */}
         <motion.div
