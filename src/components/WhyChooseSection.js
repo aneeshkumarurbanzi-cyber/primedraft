@@ -141,7 +141,7 @@ export default function WhyChooseSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <div className="rounded-[40px] border border-white/10 bg-zinc-950 px-8 py-20 text-center md:px-16">
+          <div className="rounded-[40px] border border-white/10 bg-zinc-900 px-8 py-20 text-center md:px-16">
             <h2 className="mb-6 text-4xl md:text-5xl font-bold">
               Ready to Draft Your Future?
             </h2>

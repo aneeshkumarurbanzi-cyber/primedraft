@@ -74,7 +74,7 @@ export default function CoreServices() {
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
 
             <div className="absolute bottom-10 left-10 max-w-xl">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white backdrop-blur-md">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-white/60 bg-white/10 text-white backdrop-blur-md">
                 <HiOutlineHome size={22} />
               </div>
 
@@ -111,7 +111,7 @@ export default function CoreServices() {
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="rounded-3xl border border-white/10 bg-zinc-950 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-zinc-900"
+            className="rounded-3xl border border-white/10 bg-zinc-900 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-zinc-800"
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white">
               <HiOutlineCog6Tooth size={22} />
@@ -155,7 +155,7 @@ export default function CoreServices() {
           {/* BIM Modeling */}
           <motion.div
             variants={fadeUp}
-            className="rounded-3xl border border-white/10 bg-zinc-950 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-zinc-900"
+            className="rounded-3xl border border-white/10 bg-zinc-900 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-zinc-800"
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white">
               <HiOutlineCube size={22} />
@@ -174,7 +174,7 @@ export default function CoreServices() {
           {/* Site Coordination */}
           <motion.div
             variants={fadeUp}
-            className="rounded-3xl border border-white/10 bg-zinc-950 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-zinc-900"
+            className="rounded-3xl border border-white/10 bg-zinc-900 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-zinc-800"
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white">
               <HiOutlineBuildingOffice2 size={22} />
@@ -193,7 +193,7 @@ export default function CoreServices() {
           {/* 3D Visualization */}
           <motion.div
             variants={fadeUp}
-            className="rounded-3xl border border-white/10 bg-zinc-950 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-zinc-900"
+            className="rounded-3xl border border-white/10 bg-zinc-900 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-zinc-800"
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white">
               <HiOutlineSquares2X2 size={22} />
