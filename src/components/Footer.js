@@ -9,7 +9,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#071425] text-white border-t border-white/5">
+    <footer className="bg-[#12161b] text-white border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Logo & Description */}
@@ -161,7 +161,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/5 py-6">
-        <div className="max-w-7xl mx-auto px-6 text-center text-slate-500 text-sm">
+        <div className="max-w-7xl mx-auto px-6 text-center text-white text-sm">
           © 2024 PRIME Drafting. Precision in every line.
         </div>
       </div>

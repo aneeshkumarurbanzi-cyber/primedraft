@@ -172,23 +172,7 @@ export default function CoreServices() {
           </motion.div>
 
           {/* Site Coordination */}
-          <motion.div
-            variants={fadeUp}
-            className="rounded-3xl border border-white/10 bg-zinc-900 p-8 transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-zinc-800"
-          >
-            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white">
-              <HiOutlineBuildingOffice2 size={22} />
-            </div>
-
-            <h3 className="mt-6 text-2xl font-bold">
-              Site Coordination
-            </h3>
-
-            <p className="mt-4 leading-relaxed text-gray-400">
-              Ensuring design intent is maintained from planning and
-              drafting through on-site execution and delivery.
-            </p>
-          </motion.div>
+          
 
           {/* 3D Visualization */}
           <motion.div

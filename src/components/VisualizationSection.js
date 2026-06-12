@@ -126,7 +126,7 @@ export default function VisualizationSection() {
         </div>
 
         {/* CTA */}
-        <div className="mt-24 border border-white/20 bg-gradient-to-r from-zinc-900 to-zinc-950 py-20">
+        <div className="mt-24 border rounded-3xl border-white/20 bg-gradient-to-r from-zinc-900 to-zinc-950 py-20">
           <div className="mx-auto max-w-4xl text-center">
             <p className="text-[10px] uppercase tracking-[4px] text-zinc-500">
               [ Ready For Deployment ]
